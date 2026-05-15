@@ -2,11 +2,10 @@
 #define MEMORY_MAP_H
 
 #include <neko_types.h>
-#include <string>
 
 typedef struct
 {
-    std::string name;
+    const char *name;
 
     u16 start;
     u16 end;
@@ -23,11 +22,13 @@ typedef struct
     X(HRAM, 0xFF80, 0xFFFE)     \
     X(IE, 0xFFFF, 0xFFFF)
 
-constexpr address_range_t memory_addresses[] =
+struct memory_map_t
 {
-#define X(name, start, end) { #name, start, end },
+#define X(name, start, end) const address_range_t name = { #name, start, end };
     MEMORY_MAP(X)
 #undef X
 };
+
+constexpr memory_map_t MEMORY;
 
 #endif // MEMORY_MAP_H
