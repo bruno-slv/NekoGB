@@ -11,6 +11,9 @@ add_library(
     cartridge/cartridge.cpp
     device/device.h
     device/device.cpp
+    cartridge/header.h
+    cartridge/header.cpp
+    device/memory_map.h
 )
 
 target_include_directories(
