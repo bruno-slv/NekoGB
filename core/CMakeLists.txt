@@ -13,7 +13,7 @@ add_library(
     device/device.cpp
     cartridge/header.h
     cartridge/header.cpp
-    device/memory_map.h
+    memory/memory_map.h
 )
 
 target_include_directories(
@@ -21,6 +21,7 @@ target_include_directories(
     PUBLIC
     cartridge
     device
+    memory
     ../common
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
