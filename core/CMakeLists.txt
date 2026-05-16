@@ -10,7 +10,6 @@ add_library(
     cartridge/cartridge.h
     cartridge/cartridge.cpp
     device/device.h
-    device/device.cpp
     cartridge/header.h
     cartridge/header.cpp
     memory/memory_map.h

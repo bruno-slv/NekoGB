@@ -3,18 +3,21 @@
 
 #include <neko_types.h>
 
-class IDevice
+class IMemoryDevice
 {
 public:
-    virtual void tick(u32 cycles) = 0;
-    virtual u8 reset() = 0;
-
     virtual u8 read(u16 offset) = 0;
     virtual void write(u16 offset, u8 value) = 0;
 
-    IDevice();
+    virtual ~IMemoryDevice() = default;
+};
 
-    virtual ~IDevice();
+class IClockDevice
+{
+public:
+    virtual void tick(u32 cycles) = 0;
+
+    virtual ~IClockDevice() = default;
 };
 
 #endif // DEVICE_H
