@@ -29,12 +29,3 @@ void Cartridge::write(u16 offset, u8 value)
     (void)offset;
     (void)value;
 }
-
-void Cartridge::tick(u32 cycles)
-{
-}
-
-u8 Cartridge::reset()
-{
-    return 0xFF;
-}
